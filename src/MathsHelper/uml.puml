@@ -1,0 +1,51 @@
+@startuml
+
+class RandQuestion {
+    int num1;//运算元一
+    int num2;//运算元二
+    int ans;//结果
+    char opt;//运算符
+    public RandQuestion() {}
+    public void refresh() {}
+    public int getNum1() {}
+    public int getNum2() {}
+    public char getOpt() {}
+    public int getAns() {}
+}
+class AnsHandler {
+    public RandQuestion ques;//题目
+    public int user_ans;//传入的用户答案
+    public int true_ans;//正确答案
+    public AnsHandler(RandQuestion ques, int user_ans) {}
+    public int getUserAns() {}
+    public int getTrueAns() {}
+    public boolean isRight() {}
+}
+class Statistics {
+    int tot = 0;
+    int right = 0;
+    public void incTot() {}
+    public void incRight() {}
+    public void refresh() {}
+    public int getRight() {}
+    public int getTot() {}
+}
+class Main {
+class Ticker1
+}
+class Feedback {
+    List<String> strings;
+    Random r;
+    public Feedback(File file) {}
+    public String getRandomString() {}
+
+}
+
+AnsHandler<|-- RandQuestion
+Main <|-- RandQuestion
+Main <|-- AnsHandler
+Main <|-- Statistics
+Main <|--Feedback
+
+
+@enduml
